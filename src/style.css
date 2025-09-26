@@ -10,12 +10,34 @@ body {
   scrollbar-color: white cornflowerblue;
 }
 
+form {
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  border: 1px solid cornflowerblue;
+  border-radius: 10px;
+}
+
+form button {
+  all: unset;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+form .buttons {
+  gap: 1rem;
+  display: flex;
+  align-self: flex-end;
+}
+
 #menu {
-  width: 300px;
   overflow: auto;
   color: white;
   padding: 0 1rem;
-  flex: 0 0 300px;
+  /* flex: 0 0 300px; */
   margin-top: 4rem;
   list-style: none;
   background: cornflowerblue;
@@ -27,7 +49,7 @@ body {
   gap: 0.5rem;
   display: flex;
   padding: 1rem;
-  width: 300px;
+  /* width: 300px; */
   position: fixed;
   background: cornflowerblue;
 }
@@ -58,21 +80,21 @@ body {
   padding: 5rem 10rem 2rem 10rem;
 }
 
-#content form {
-  gap: 1rem;
-  width: 100%;
-  display: flex;
-  padding: 1rem;
-  flex-direction: column;
-  border: solid black;
+#title {
+  all: unset;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-#content form .buttons {
-  gap: 1rem;
-  display: flex;
-  align-self: flex-end;
+#description {
+  all: unset;
+  font-size: 18px;
 }
 
-#content form button {
-  padding: 0.5rem 1rem;
+.cancel {
+  background: orangered;
+}
+
+.add-task {
+  background: cornflowerblue;
 }

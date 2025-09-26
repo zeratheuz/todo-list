@@ -22,26 +22,22 @@
     <h1>TASKS:</h1>
     <ul id="taskList" class="task-list">
       <form action="">
-        <label for="title">Title
-          <input type="text" name="title" id="title">
-        </label>
-        <label for="description">Description
-          <input type="text" name="description" id="description">
-        </label>
+        <input type="text" name="title" id="title" placeholder="What do you want to do?">
+        <input type="text" name="description" id="description" placeholder="Give a description of this...">
         <div>
           <label for="date">Date</label>
           <input type="date" name="date" id="date">
-          <label for="priotiry">Priotiry</label>
-          <input type="radio" id="p1" value="p1" name="priotiry">
+          <label for="priority">Priority</label>
+          <input type="radio" id="p1" value="p1" name="priority">
           <label for="p1">P1</label>
-          <input type="radio" id="p1" value="p1" name="priotiry">
+          <input type="radio" id="p1" value="p1" name="priority">
           <label for="p1">P2</label>
-          <input type="radio" id="p1" value="p1" name="priotiry">
+          <input type="radio" id="p1" value="p1" name="priority">
           <label for="p1">P3</label>
         </div>
         <div class="buttons">
-          <button>Cancel</button>
-          <button>Add task</button>
+          <button class="cancel">Cancel</button>
+          <button class="add-task">Add task</button>
         </div>
       </form>
     </ul>

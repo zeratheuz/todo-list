@@ -7,7 +7,7 @@
 body {
   display: flex;
   height: 100vh;
-  scrollbar-color: white cornflowerblue;
+  scrollbar-color: white royalblue;
 }
 
 form {
@@ -16,14 +16,16 @@ form {
   display: flex;
   padding: 1rem;
   flex-direction: column;
-  border: 1px solid cornflowerblue;
+  border: 1px solid royalblue;
   border-radius: 10px;
 }
 
 form button {
-  all: unset;
-  color: white;
+  /* color: white; */
+  border: none;
+  font-size: 1rem;
   font-weight: bold;
+  border-radius: 5px;
   padding: 0.5rem 1rem;
 }
 
@@ -33,14 +35,19 @@ form .buttons {
   align-self: flex-end;
 }
 
+input,
+select {
+  font-size: 18px;
+}
+
 #menu {
   overflow: auto;
   color: white;
   padding: 0 1rem;
-  /* flex: 0 0 300px; */
+  flex: 0 0 300px;
   margin-top: 4rem;
   list-style: none;
-  background: cornflowerblue;
+  background: royalblue;
 }
 
 #menu .header-tasks {
@@ -49,9 +56,9 @@ form .buttons {
   gap: 0.5rem;
   display: flex;
   padding: 1rem;
-  /* width: 300px; */
+  width: 300px;
   position: fixed;
-  background: cornflowerblue;
+  background: royalblue;
 }
 
 #menu ul {
@@ -91,10 +98,15 @@ form .buttons {
   font-size: 18px;
 }
 
-.cancel {
-  background: orangered;
+.cancel:hover {
+  background: darkgray;
 }
 
 .add-task {
+  color: white;
   background: cornflowerblue;
+}
+
+.add-task:hover {
+  background: royalblue;
 }

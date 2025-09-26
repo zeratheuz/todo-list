@@ -25,15 +25,13 @@
         <input type="text" name="title" id="title" placeholder="What do you want to do?">
         <input type="text" name="description" id="description" placeholder="Give a description of this...">
         <div>
-          <label for="date">Date</label>
           <input type="date" name="date" id="date">
-          <label for="priority">Priority</label>
-          <input type="radio" id="p1" value="p1" name="priority">
-          <label for="p1">P1</label>
-          <input type="radio" id="p1" value="p1" name="priority">
-          <label for="p1">P2</label>
-          <input type="radio" id="p1" value="p1" name="priority">
-          <label for="p1">P3</label>
+          <select name="priority" id="priority">
+            <option value="" disabled selected hidden>🔵 Priority</option>
+            <option value="1">🔴Priority 1</option>
+            <option value="2">🟠Priority 2</option>
+            <option value="3">🟢Priority 3</option>
+          </select>
         </div>
         <div class="buttons">
           <button class="cancel">Cancel</button>

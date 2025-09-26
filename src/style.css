@@ -12,12 +12,23 @@ body {
 
 #menu {
   width: 300px;
-  padding: 1rem;
   overflow: auto;
   color: white;
+  padding: 0 1rem;
   flex: 0 0 300px;
   margin-top: 4rem;
   list-style: none;
+  background: cornflowerblue;
+}
+
+#menu .header-tasks {
+  top: 0;
+  left: 0;
+  gap: 0.5rem;
+  display: flex;
+  padding: 1rem;
+  width: 300px;
+  position: fixed;
   background: cornflowerblue;
 }
 
@@ -39,17 +50,29 @@ body {
   text-overflow: ellipsis;
 }
 
-#menu .header-tasks {
-  top: 0;
-  left: 0;
+#content {
+  gap: 2rem;
+  width: 100%;
   display: flex;
-  padding: 1rem;
-  width: 300px;
-  position: fixed;
-  background: cornflowerblue;
-  border-bottom: solid white;
+  flex-direction: column;
+  padding: 5rem 10rem 2rem 10rem;
 }
 
-#content {
-  padding: 5rem;
+#content form {
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  border: solid black;
+}
+
+#content form .buttons {
+  gap: 1rem;
+  display: flex;
+  align-self: flex-end;
+}
+
+#content form button {
+  padding: 0.5rem 1rem;
 }

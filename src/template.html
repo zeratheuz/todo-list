@@ -12,27 +12,39 @@
 <body>
   <div id="menu">
     <div class="header-tasks">
-      <img src="assets/todo.png" alt="todo-list logo" width="30"> <h2>Tasks:</h2>
+      <img src="assets/todo.png" alt="todo-list logo" width="30">
+      <h2>Tasks</h2>
     </div>
     <ul>
     </ul>
   </div>
   <div id="content">
-    <form action="">
-      <label for="title">Title</label>
-      <input type="text" name="title" id="title">
-      <label for="description">Description</label>
-      <input type="text" name="description" id="description">
-      <label for="date">Date</label>
-      <input type="date">
-      <input type="radio" id="p1" value="p1" name="priotiry">
-      <label for="p1">P1</label>
-      <input type="radio" id="p1" value="p1" name="priotiry">
-      <label for="p1">P2</label>
-      <input type="radio" id="p1" value="p1" name="priotiry">
-      <label for="p1">P3</label>
-
-    </form>
+    <h1>TASKS:</h1>
+    <ul id="taskList" class="task-list">
+      <form action="">
+        <label for="title">Title
+          <input type="text" name="title" id="title">
+        </label>
+        <label for="description">Description
+          <input type="text" name="description" id="description">
+        </label>
+        <div>
+          <label for="date">Date</label>
+          <input type="date" name="date" id="date">
+          <label for="priotiry">Priotiry</label>
+          <input type="radio" id="p1" value="p1" name="priotiry">
+          <label for="p1">P1</label>
+          <input type="radio" id="p1" value="p1" name="priotiry">
+          <label for="p1">P2</label>
+          <input type="radio" id="p1" value="p1" name="priotiry">
+          <label for="p1">P3</label>
+        </div>
+        <div class="buttons">
+          <button>Cancel</button>
+          <button>Add task</button>
+        </div>
+      </form>
+    </ul>
   </div>
 </body>
 

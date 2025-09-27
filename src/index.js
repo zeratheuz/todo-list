@@ -1,7 +1,7 @@
 import './style.css'
 import { createButtonAddTask } from './createButtonAddTask.js'
-import { form } from './form.js'
 
 const divMenu = document.querySelector("#menu")
 
-createButtonAddTask()
+const divContent = document.querySelector("#content")
+createButtonAddTask(divContent)

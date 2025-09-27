@@ -1,9 +1,11 @@
-export function createButtonAddTask() {
-  console.log("TEST")
-  const divContent = document.querySelector("#content")
+import { createTaskForm } from './form.js'
+
+export function createButtonAddTask(divContent) {
   const buttonAddTask = document.createElement("button")
 
   buttonAddTask.classList.add("add-task")
   buttonAddTask.textContent = "+ Add Task"
+  buttonAddTask.addEventListener("click", () => {createTaskForm(divContent)})
+
   divContent.appendChild(buttonAddTask)
 }

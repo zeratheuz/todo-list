@@ -1,5 +1,3 @@
-import { createButtonAddTask } from './createButtonAddTask.js'
-
 export function createTaskForm(divContent) {
   const form = document.createElement("form")
 
@@ -15,13 +13,14 @@ export function createTaskForm(divContent) {
   inputDesc.placeholder = "Give a description of it..."
   form.appendChild(inputDesc)
 
-  const divForm = document.createElement("div")
+  const divDatePriority = document.createElement("div")
+  divDatePriority.classList.add("date-priority")
 
   const inputDate = document.createElement("input")
   inputDate.id = "date"
   inputDate.name = "date"
   inputDate.type = "date"
-  divForm.appendChild(inputDate)
+  divDatePriority.appendChild(inputDate)
 
   const selectPriority = document.createElement("select")
   selectPriority.id = "priority"
@@ -41,7 +40,8 @@ export function createTaskForm(divContent) {
     }
     selectPriority.appendChild(optPriority)
   })
-  divForm.appendChild(selectPriority)
+  divDatePriority.appendChild(selectPriority)
+  form.appendChild(divDatePriority)
 
   const divButtons = document.createElement("div")
   divButtons.classList.add("buttons")
@@ -55,10 +55,7 @@ export function createTaskForm(divContent) {
   buttonAddTask.classList.add("add-task")
   buttonAddTask.textContent = "Add Task"
   divButtons.appendChild(buttonAddTask)
-
-  divForm.appendChild(divButtons)
-
-  form.appendChild(divForm)
+  form.appendChild(divButtons)
 
   divContent.appendChild(form)
 }

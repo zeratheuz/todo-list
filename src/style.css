@@ -15,13 +15,13 @@ form {
   width: 100%;
   display: flex;
   padding: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
   flex-direction: column;
   border: 1px solid royalblue;
-  border-radius: 10px;
 }
 
 button {
-  /* color: white; */
   border: none;
   font-size: 1rem;
   font-weight: bold;
@@ -31,15 +31,14 @@ button {
 }
 
 form .buttons {
-  gap: 1rem;
+  gap: 0.5rem;
   display: flex;
   align-self: flex-end;
 }
 
 input,
 select {
-  font-size: 18px;
-  padding: 5px;
+  font-size: 1rem;
 }
 
 #menu {
@@ -99,6 +98,12 @@ select {
   all: unset;
   font-size: 18px;
 }
+
+.date-priority {
+  gap: 1rem;
+  display: flex;
+}
+
 
 .cancel:hover {
   background: darkgray;

@@ -5,8 +5,7 @@ export function createButtonAddTask(divContent) {
 
   buttonAddTask.classList.add("add-task")
   buttonAddTask.textContent = "+ Add Task"
-  buttonAddTask.addEventListener("click", () => {createTaskForm(divContent)})
+  buttonAddTask.addEventListener("click", () => { createTaskForm(divContent) })
 
   divContent.appendChild(buttonAddTask)
-  createTaskForm(divContent)
 }

@@ -1,3 +1,5 @@
+import { createButtonAddTask } from './createButtonAddTask.js'
+
 export function createTaskForm(divContent) {
   const form = document.createElement("form")
 
@@ -49,11 +51,17 @@ export function createTaskForm(divContent) {
   const buttonCancel = document.createElement("button")
   buttonCancel.classList.add("cancel")
   buttonCancel.textContent = "Cancel"
+  buttonCancel.type = "button"
+  buttonCancel.addEventListener("click", () => {
+    divContent.removeChild(form)
+    createButtonAddTask(divContent)
+  })
   divButtons.appendChild(buttonCancel)
 
   const buttonAddTask = document.createElement("button")
   buttonAddTask.classList.add("add-task")
   buttonAddTask.textContent = "Add Task"
+  buttonAddTask.type = "button"
   divButtons.appendChild(buttonAddTask)
   form.appendChild(divButtons)
 

@@ -29,11 +29,35 @@ export function createTaskForm(divContent) {
 
   const priorities = ["🔵Priority", "🔴Priority 1", "🟠Priority 2", "🟢Priority 3"]
 
-  priorities.forEach(priority => {
-
+  priorities.forEach((priority, index) => {
+    const optPriority = document.createElement("option")
+    optPriority.textContent = priority
+    optPriority.id = `priotiry${index}`
+    optPriority.value = index
+    if (index === 0) {
+      optPriority.hidden = true
+      optPriority.disabled = true
+      optPriority.selected = true
+    }
+    selectPriority.appendChild(optPriority)
   })
-
   divForm.appendChild(selectPriority)
+
+  const divButtons = document.createElement("div")
+  divButtons.classList.add("buttons")
+
+  const buttonCancel = document.createElement("button")
+  buttonCancel.classList.add("cancel")
+  buttonCancel.textContent = "Cancel"
+  divButtons.appendChild(buttonCancel)
+
+  const buttonAddTask = document.createElement("button")
+  buttonAddTask.classList.add("add-task")
+  buttonAddTask.textContent = "Add Task"
+  divButtons.appendChild(buttonAddTask)
+
+  divForm.appendChild(divButtons)
+
   form.appendChild(divForm)
 
   divContent.appendChild(form)

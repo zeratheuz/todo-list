@@ -88,6 +88,29 @@ select {
   padding: 5rem 10rem 2rem 10rem;
 }
 
+#content ul {
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#content li {
+  gap: 1rem;
+  display: flex;
+  align-items: start;
+}
+
+#content li input {
+  margin-top: 10px;
+  transform: scale(2);
+}
+
+.task-details {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
 #title {
   all: unset;
   font-size: 20px;
@@ -103,7 +126,6 @@ select {
   gap: 1rem;
   display: flex;
 }
-
 
 .cancel:hover {
   background: darkgray;

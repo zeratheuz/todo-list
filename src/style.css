@@ -107,21 +107,37 @@ select {
   transform: scale(2);
 }
 
-.task-details {
-  gap: 5px;
-  display: flex;
-  flex-direction: column;
-}
-
 #title {
   all: unset;
   font-size: 20px;
   font-weight: bold;
 }
 
-#description {
+#desc {
   all: unset;
   font-size: 18px;
+}
+
+.blue input {
+  accent-color: blue;
+}
+
+.green input {
+  accent-color: green;
+}
+
+.orange input {
+  accent-color: orange;
+}
+
+.red input {
+  accent-color: red;
+}
+
+.task-details {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
 }
 
 .date-priority {

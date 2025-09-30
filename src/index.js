@@ -16,6 +16,30 @@ export function displayTasks(divContent) {
     taskCheck.type = "checkbox"
     taskCheck.id = task.id
     taskCheck.name = task.title
+    console.log(task.priority)
+    switch (task.priority) {
+      case 1:
+        taskCheck.classList.add("green")
+        console.log(task.priority)
+        break
+      case 2:
+        taskCheck.classList.add("orange")
+        console.log(task.priority)
+        break
+      case 3:
+        taskCheck.classList.add("red")
+        console.log(task.priority)
+        break
+      default:
+        taskCheck.classList.add("blue")
+        console.log(task.priority)
+    }
+    taskCheck.addEventListener("mouseenter", () => {
+      taskCheck.checked = true
+    })
+    taskCheck.addEventListener("mouseleave", () => {
+      taskCheck.checked = false
+    })
     liTask.appendChild(taskCheck)
     const divTask = document.createElement("div")
     divTask.classList.add("task-details")

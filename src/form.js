@@ -15,8 +15,8 @@ export function createTaskForm(divContent) {
 
   const inputDesc = document.createElement("input")
   inputDesc.type = "text"
-  inputDesc.id = "description"
-  inputDesc.name = "description"
+  inputDesc.id = "desc"
+  inputDesc.name = "desc"
   inputDesc.placeholder = "Give a description of it..."
   form.appendChild(inputDesc)
 
@@ -33,7 +33,7 @@ export function createTaskForm(divContent) {
   selectPriority.id = "priority"
   selectPriority.name = "priority"
 
-  const priorities = ["🔵Priority", "🔴Priority 1", "🟠Priority 2", "🟢Priority 3"]
+  const priorities = ["🔵Priority", "🟢Priority 1", "🟠Priority 2", "🔴Priority 3"]
 
   priorities.forEach((priority, index) => {
     const optPriority = document.createElement("option")

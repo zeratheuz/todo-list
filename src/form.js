@@ -61,7 +61,14 @@ export function createTaskForm(divContent) {
   const buttonAddTask = document.createElement("button")
   buttonAddTask.classList.add("add-task")
   buttonAddTask.textContent = "Add Task"
-  buttonAddTask.type = "button"
+  buttonAddTask.type = "submit"
+  buttonAddTask.addEventListener("submit", (event) => {
+    event.preventDefault()
+    const taskData = new FormData(form)
+    const task = Object.form(taskData.entries())
+    tasks.push(new Task(task))
+    divContent.removeChild(form)
+  })
   divButtons.appendChild(buttonAddTask)
   form.appendChild(divButtons)
 

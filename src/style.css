@@ -119,19 +119,19 @@ select {
 }
 
 .blue input {
-  accent-color: blue;
+  accent-color: lightblue;
 }
 
-.green input {
-  accent-color: green;
+.green {
+  accent-color: lightgreen;
 }
 
-.orange input {
+.orange {
   accent-color: orange;
 }
 
-.red input {
-  accent-color: red;
+.red {
+  accent-color: lightcoral;
 }
 
 .task-details {

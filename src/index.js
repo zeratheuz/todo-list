@@ -18,15 +18,15 @@ export function displayTasks(divContent) {
     taskCheck.name = task.title
     console.log(task.priority)
     switch (task.priority) {
-      case 1:
+      case "1":
         taskCheck.classList.add("green")
         console.log(task.priority)
         break
-      case 2:
+      case "2":
         taskCheck.classList.add("orange")
         console.log(task.priority)
         break
-      case 3:
+      case "3":
         taskCheck.classList.add("red")
         console.log(task.priority)
         break
@@ -39,6 +39,10 @@ export function displayTasks(divContent) {
     })
     taskCheck.addEventListener("mouseleave", () => {
       taskCheck.checked = false
+    })
+    taskCheck.addEventListener("click", () => {
+      localStorage.removeItem(task.id)
+      location.reload()
     })
     liTask.appendChild(taskCheck)
     const divTask = document.createElement("div")

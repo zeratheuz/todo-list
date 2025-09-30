@@ -2,6 +2,8 @@ import { createButtonAddTask } from './createButtonAddTask.js'
 
 export function createTaskForm(divContent) {
   const form = document.createElement("form")
+  form.id = "taskForm"
+  form.method = "post"
 
   const inputTitle = document.createElement("input")
   inputTitle.id = "title"
@@ -62,15 +64,17 @@ export function createTaskForm(divContent) {
   buttonAddTask.classList.add("add-task")
   buttonAddTask.textContent = "Add Task"
   buttonAddTask.type = "submit"
-  buttonAddTask.addEventListener("submit", (event) => {
-    event.preventDefault()
-    const taskData = new FormData(form)
-    const task = Object.form(taskData.entries())
-    tasks.push(new Task(task))
-    divContent.removeChild(form)
-  })
   divButtons.appendChild(buttonAddTask)
   form.appendChild(divButtons)
 
   divContent.appendChild(form)
+
+  const taskForm = document.querySelector("#taskForm")
+  taskForm.addEventListener("submit", (event) => {
+    event.preventDefault()
+    const taskData = new FormData(form)
+    const task = Object.fromEntries(taskData.entries())
+    console.log(task)
+    divContent.removeChild(form)
+  })
 }

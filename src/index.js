@@ -8,7 +8,7 @@ const divContent = document.querySelector("#content")
 const tasks = []
 
 class Task {
-  constructor(title, desc, date, priority) {
+  constructor(title, desc, date, priority = 0) {
     this.title = title,
       this.desc = desc,
       this.date = date,
@@ -19,7 +19,7 @@ class Task {
 
 function displayTasks() {
   const ulTask = document.createElement("ul")
-  tasks.forEach(task => {
+  Object.keys(localStorage).forEach(task => {
     const liTask = document.createElement("li")
     ulTask.appendChild(liTask)
     const taskCheck = document.createElement("input")

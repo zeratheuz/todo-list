@@ -19,6 +19,7 @@ form {
   border-radius: 10px;
   flex-direction: column;
   border: 1px solid royalblue;
+  flex: 0 0 auto;
 }
 
 button {
@@ -84,6 +85,7 @@ select {
   gap: 2rem;
   width: 100%;
   display: flex;
+  overflow: auto;
   flex-direction: column;
   padding: 5rem 10rem 2rem 10rem;
 }

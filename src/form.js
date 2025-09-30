@@ -7,12 +7,14 @@ export function createTaskForm(divContent) {
   form.method = "post"
 
   const inputTitle = document.createElement("input")
+  inputTitle.type = "text"
   inputTitle.id = "title"
   inputTitle.name = "title"
   inputTitle.placeholder = "What do you wanna do?"
   form.appendChild(inputTitle)
 
   const inputDesc = document.createElement("input")
+  inputDesc.type = "text"
   inputDesc.id = "description"
   inputDesc.name = "description"
   inputDesc.placeholder = "Give a description of it..."
@@ -71,7 +73,7 @@ export function createTaskForm(divContent) {
   divContent.appendChild(form)
 
   class Task {
-    constructor({ title = "Test", desc = "I'm testing this", date, priority = 0 }) {
+    constructor({ title, desc, date, priority = 0 }) {
       this.title = title,
         this.desc = desc,
         this.date = date,

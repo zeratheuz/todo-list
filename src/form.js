@@ -1,4 +1,5 @@
 import { createButtonAddTask } from './createButtonAddTask.js'
+import { displayTasks } from './index.js'
 
 export function createTaskForm(divContent) {
   const form = document.createElement("form")
@@ -69,12 +70,25 @@ export function createTaskForm(divContent) {
 
   divContent.appendChild(form)
 
+  class Task {
+    constructor({ title = "Test", desc = "I'm testing this", date, priority = 0 }) {
+      this.title = title,
+        this.desc = desc,
+        this.date = date,
+        this.priority = priority,
+        this.id = crypto.randomUUID()
+    }
+  }
+
   const taskForm = document.querySelector("#taskForm")
   taskForm.addEventListener("submit", (event) => {
     event.preventDefault()
     const taskData = new FormData(form)
-    const task = Object.fromEntries(taskData.entries())
-    console.log(task)
+    const taskObject = Object.fromEntries(taskData.entries())
+    const task = new Task(taskObject)
+    localStorage.setItem(task.id, JSON.stringify(task))
     divContent.removeChild(form)
+    displayTasks(divContent)
+    createButtonAddTask(divContent)
   })
 }

@@ -12,15 +12,15 @@ export function displayTasks(divContent) {
     const task = JSON.parse(value)
     const liTask = document.createElement("li")
     switch (task.priority) {
-      case "1":
+      case 1:
         liTask.classList.add("green")
         console.log(task.priority)
         break
-      case "2":
+      case 2:
         liTask.classList.add("orange")
         console.log(task.priority)
         break
-      case "3":
+      case 3:
         liTask.classList.add("red")
         console.log(task.priority)
         break
@@ -42,7 +42,10 @@ export function displayTasks(divContent) {
     })
     taskCheck.addEventListener("click", () => {
       localStorage.removeItem(task.id)
-      location.reload()
+      displayTasks(divContent)
+      const buttonAddTask = document.querySelector(".add-task")
+      divContent.removeChild(buttonAddTask)
+      createButtonAddTask(divContent)
     })
     liTask.appendChild(taskCheck)
     const divTask = document.createElement("div")

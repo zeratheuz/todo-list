@@ -77,7 +77,7 @@ export function createTaskForm(divContent) {
       this.title = title,
         this.desc = desc,
         this.date = date,
-        this.priority = priority,
+        this.priority = +priority,
         this.id = crypto.randomUUID()
     }
   }
@@ -94,3 +94,12 @@ export function createTaskForm(divContent) {
     createButtonAddTask(divContent)
   })
 }
+
+localStorage.setItem(0, '{"id":0,"title":"Fix Batmobile","desc":"Perform full diagnostic and repairs.","date":"2025-10-01","priority":3}');
+localStorage.setItem(1, '{"id":1,"title":"Night Patrol","desc":"Sweep Gotham from rooftops.","date":"2025-10-01","priority":2}');
+localStorage.setItem(2, '{"id":2,"title":"Meet Gordon","desc":"Briefing at GCPD rooftop.","date":"2025-10-02","priority":1}');
+localStorage.setItem(3, '{"id":3,"title":"Train with Robin","desc":"Combat drills and stealth exercises.","date":"2025-10-03","priority":2}');
+localStorage.setItem(4, '{"id":4,"title":"Upgrade Batcave","desc":"Install new surveillance grid.","date":"2025-10-04","priority":1}');
+localStorage.setItem(5, '{"id":5,"title":"Analyze Intel","desc":"Decrypt Penguin\'s communications.","date":"2025-10-05","priority":3}');
+localStorage.setItem(6, '{"id":6,"title":"Stakeout at Docks","desc":"Monitor smuggling activity near pier 39.","date":"2025-10-06","priority":2}');
+localStorage.setItem(7, '{"id":7,"title":"Recharge","desc":"Sleep (against Alfred’s advice to skip it).","date":"2025-10-07","priority":0}');

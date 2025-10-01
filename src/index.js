@@ -11,29 +11,29 @@ export function displayTasks(divContent) {
   Object.values(localStorage).forEach(value => {
     const task = JSON.parse(value)
     const liTask = document.createElement("li")
+    switch (task.priority) {
+      case "1":
+        liTask.classList.add("green")
+        console.log(task.priority)
+        break
+      case "2":
+        liTask.classList.add("orange")
+        console.log(task.priority)
+        break
+      case "3":
+        liTask.classList.add("red")
+        console.log(task.priority)
+        break
+      default:
+        liTask.classList.add("blue")
+        console.log(task.priority)
+    }
     ulTask.appendChild(liTask)
     const taskCheck = document.createElement("input")
     taskCheck.type = "checkbox"
     taskCheck.id = task.id
     taskCheck.name = task.title
     console.log(task.priority)
-    switch (task.priority) {
-      case "1":
-        taskCheck.classList.add("green")
-        console.log(task.priority)
-        break
-      case "2":
-        taskCheck.classList.add("orange")
-        console.log(task.priority)
-        break
-      case "3":
-        taskCheck.classList.add("red")
-        console.log(task.priority)
-        break
-      default:
-        taskCheck.classList.add("blue")
-        console.log(task.priority)
-    }
     taskCheck.addEventListener("mouseenter", () => {
       taskCheck.checked = true
     })

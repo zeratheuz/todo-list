@@ -99,7 +99,12 @@ select {
 #content li {
   gap: 1rem;
   display: flex;
+  height: 5.5rem;
+  overflow: auto;
   align-items: start;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  scrollbar-width: none;
 }
 
 #content li input {
@@ -118,19 +123,23 @@ select {
   font-size: 18px;
 }
 
-.blue input {
+.blue {
+  background: lightblue;
   accent-color: lightblue;
 }
 
 .green {
+  background: lightgreen;
   accent-color: lightgreen;
 }
 
 .orange {
+  background: orange;
   accent-color: orange;
 }
 
 .red {
+  background: lightcoral;
   accent-color: lightcoral;
 }
 

@@ -87,7 +87,7 @@ select {
   display: flex;
   overflow: auto;
   flex-direction: column;
-  padding: 3rem 10rem 2rem 10rem;
+  padding: 3rem 8rem 2rem;
 }
 
 #content ul {

@@ -81,6 +81,11 @@ select {
   text-overflow: ellipsis;
 }
 
+#menu button:hover {
+  color: white;
+  background: cornflowerblue;
+}
+
 #content {
   gap: 2rem;
   width: 100%;

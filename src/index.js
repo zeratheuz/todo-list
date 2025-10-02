@@ -3,9 +3,14 @@ import { createButtonAddTask } from './createButtonAddTask.js'
 
 const divContent = document.querySelector("#content")
 
-const btnHigh = document.querySelector("#high")
-btnHigh.addEventListener("click", () => {
-  displayTasks(divContent, 3)
+const filters = Array.from(document.querySelectorAll(".filter"))
+filters.forEach(filter => {
+  filter.addEventListener("click", () => {
+    displayTasks(divContent, filter.id)
+    const buttonAddTask = document.querySelector(".add-task")
+    divContent.removeChild(buttonAddTask)
+    createButtonAddTask(divContent)
+  })
 })
 
 export function displayTasks(divContent, filter = "allTasks") {
@@ -13,31 +18,26 @@ export function displayTasks(divContent, filter = "allTasks") {
   ulTask.innerHTML = ""
   Object.values(localStorage).forEach(value => {
     const task = JSON.parse(value)
-    if (task.priority == filter) {
+    if (filter == task.priority || filter == "allTasks") {
       const liTask = document.createElement("li")
       switch (task.priority) {
         case 1:
           liTask.classList.add("green")
-          console.log(task.priority)
           break
         case 2:
           liTask.classList.add("orange")
-          console.log(task.priority)
           break
         case 3:
           liTask.classList.add("red")
-          console.log(task.priority)
           break
         default:
           liTask.classList.add("blue")
-          console.log(task.priority)
       }
       ulTask.appendChild(liTask)
       const taskCheck = document.createElement("input")
       taskCheck.type = "checkbox"
       taskCheck.id = task.id
       taskCheck.name = task.title
-      console.log(task.priority)
       taskCheck.addEventListener("mouseenter", () => {
         taskCheck.checked = true
       })

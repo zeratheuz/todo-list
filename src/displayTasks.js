@@ -5,20 +5,24 @@ export function displayTasks(divContent, filter = "allTasks") {
   const ulTask = document.querySelector("#ulTask")
   ulTask.innerHTML = ""
 
+  // const tasks = JSON.parse(localStorage.getItem(tasks))
+  // console.log(tasks)
+
   Object.values(localStorage).forEach(value => {
     const task = JSON.parse(value)
+
     if (filter == task.priority || filter == "allTasks") {
+
       const liTask = document.createElement("li")
 
-      const priorityColors = {
-        0: "blue",
-        1: "green",
-        2: "orange",
-        3: "red"
+      const PRIORITY = {
+        0: "neutral",
+        1: "low",
+        2: "mid",
+        3: "high"
       }
 
-      liTask.classList.add(priorityColors[task.priority])
-
+      liTask.classList.add(PRIORITY[task.priority])
       ulTask.appendChild(liTask)
 
       const taskCheck = document.createElement("input")

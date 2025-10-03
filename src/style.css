@@ -128,22 +128,22 @@ select {
   font-size: 18px;
 }
 
-.blue {
+.neutral {
   background: lightblue;
   accent-color: lightblue;
 }
 
-.green {
+.low {
   background: lightgreen;
   accent-color: lightgreen;
 }
 
-.orange {
+.mid {
   background: orange;
   accent-color: orange;
 }
 
-.red {
+.high {
   background: lightcoral;
   accent-color: lightcoral;
 }

@@ -75,10 +75,19 @@ export function createTaskForm(divContent) {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault()
+
     const taskData = new FormData(form)
     const taskObject = Object.fromEntries(taskData.entries())
     const task = new Task(taskObject)
-    localStorage.setItem(task.id, JSON.stringify(task))
+
+    if (!localStorage.getItem("tasks")) {
+      localStorage.setItem("tasks", "[]")
+    }
+
+    const tasks = JSON.parse(localStorage.getItem("tasks"))
+    tasks.push(task)
+    
+    localStorage.setItem("tasks", JSON.stringify(tasks))
     divContent.removeChild(form)
     displayTasks(divContent)
     createButtonAddTask(divContent)

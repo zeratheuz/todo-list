@@ -1,4 +1,5 @@
 import { createButtonAddTask } from "./createButtonAddTask"
+import { removeTask } from "./removeTask"
 
 export function displayTasks(divContent, filter = "allTasks") {
 
@@ -33,13 +34,7 @@ export function displayTasks(divContent, filter = "allTasks") {
         taskCheck.addEventListener("mouseenter", () => { taskCheck.checked = true })
         taskCheck.addEventListener("mouseleave", () => { taskCheck.checked = false })
 
-        taskCheck.addEventListener("click", () => {
-          localStorage.removeItem(task.id)
-          displayTasks(divContent)
-          const buttonAddTask = document.querySelector(".add-task")
-          divContent.removeChild(buttonAddTask)
-          createButtonAddTask(divContent)
-        })
+        taskCheck.addEventListener("click", () => { removeTask(divContent, task.id) })
 
         liTask.appendChild(taskCheck)
 

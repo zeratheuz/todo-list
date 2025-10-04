@@ -40,6 +40,7 @@ export function createTaskForm(divContent) {
     optPriority.textContent = priority
     optPriority.id = `priority${index}`
     optPriority.value = index
+
     if (index === 0) {
       optPriority.hidden = true
       optPriority.disabled = true

@@ -1,4 +1,3 @@
-import { createButtonAddTask } from "./createButtonAddTask"
 import { removeTask } from "./removeTask"
 
 export function displayTasks(divContent, filter = "allTasks") {

@@ -11,6 +11,17 @@ const defaultTasks = [
 
 export function createDefaultTasks() {
   defaultTasks.forEach(task => {
-    localStorage.setItem(task.id, JSON.stringify(task))
+
+    if (localStorage.length === 0) {
+
+      if (!localStorage.getItem("tasks")) {
+        localStorage.setItem("tasks", "[]")
+      }
+
+      const tasks = JSON.parse(localStorage.getItem("tasks"))
+      tasks.push(task)
+
+      localStorage.setItem("tasks", JSON.stringify(tasks))
+    }
   });
 }

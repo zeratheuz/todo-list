@@ -1,3 +1,4 @@
+import { createTaskForm } from "./form"
 import { removeTask } from "./removeTask"
 
 export function displayTasks(divContent, filter = "allTasks") {
@@ -14,6 +15,11 @@ export function displayTasks(divContent, filter = "allTasks") {
       if (filter == task.priority || filter == "allTasks") {
 
         const liTask = document.createElement("li")
+        liTask.id = task.id
+        liTask.addEventListener("click", () => {
+          liTask.innerHTML = ""
+          createTaskForm(liTask)
+        })
 
         const PRIORITY = {
           0: "neutral",
@@ -27,7 +33,6 @@ export function displayTasks(divContent, filter = "allTasks") {
 
         const taskCheck = document.createElement("input")
         taskCheck.type = "checkbox"
-        taskCheck.id = task.id
         taskCheck.name = task.title
 
         taskCheck.addEventListener("mouseenter", () => { taskCheck.checked = true })

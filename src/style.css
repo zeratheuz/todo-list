@@ -111,7 +111,8 @@ select {
   gap: 1rem;
   cursor: pointer;
   display: flex;
-  height: 5.5rem;
+  min-height: 5rem;
+  max-height: 10rem;
   overflow: auto;
   align-items: start;
   padding: 0.5rem 1rem;
@@ -119,7 +120,7 @@ select {
   scrollbar-width: none;
 }
 
-#content li input {
+#content li input[type="checkbox"] {
   margin-top: 10px;
   transform: scale(2);
 }

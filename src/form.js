@@ -1,7 +1,7 @@
 import { addTask } from './addTask.js'
 import { createButtonAddTask } from './createButtonAddTask.js'
 
-export function createTaskForm(divContent) {
+export function createTaskForm(element) {
   const form = document.createElement("form")
   form.id = "taskForm"
   form.method = "post"
@@ -59,8 +59,8 @@ export function createTaskForm(divContent) {
   buttonCancel.textContent = "Cancel"
   buttonCancel.type = "button"
   buttonCancel.addEventListener("click", () => {
-    divContent.removeChild(form)
-    createButtonAddTask(divContent)
+    element.removeChild(form)
+    createButtonAddTask(element)
   })
   divButtons.appendChild(buttonCancel)
 
@@ -71,10 +71,10 @@ export function createTaskForm(divContent) {
   divButtons.appendChild(buttonAddTask)
   form.appendChild(divButtons)
 
-  divContent.appendChild(form)
+  element.appendChild(form)
 
   form.addEventListener("submit", (event) => {
     event.preventDefault()
-    addTask(divContent, form)
+    addTask(element, form)
   })
 }

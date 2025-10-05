@@ -1,9 +1,10 @@
 import { addTask } from './addTask.js'
 import { createButtonAddTask } from './createButtonAddTask.js'
+import { displayTasks } from './displayTasks.js'
 
-export function createTaskForm(element) {
+export function createTaskForm(element, type = "add") {
   const form = document.createElement("form")
-  form.id = "taskForm"
+  form.id = `${type}Form`
   form.method = "post"
 
   const inputTitle = document.createElement("input")
@@ -60,7 +61,11 @@ export function createTaskForm(element) {
   buttonCancel.type = "button"
   buttonCancel.addEventListener("click", () => {
     element.removeChild(form)
-    createButtonAddTask(element)
+    if (type === "add") {
+      createButtonAddTask(element)
+    } else {
+      displayTasks()
+    }
   })
   divButtons.appendChild(buttonCancel)
 
@@ -69,12 +74,21 @@ export function createTaskForm(element) {
   buttonAddTask.textContent = "Add Task"
   buttonAddTask.type = "submit"
   divButtons.appendChild(buttonAddTask)
-  form.appendChild(divButtons)
+  if (type === "add") {
+    form.appendChild(divButtons)
+  } else {
+    divDatePriority.appendChild(divButtons)
+  }
 
   element.appendChild(form)
 
   form.addEventListener("submit", (event) => {
     event.preventDefault()
-    addTask(element, form)
+    if (type === "add") {
+      addTask(element, form)
+    } else {
+      alert(28)
+      // editTask(element, form)
+    }
   })
 }

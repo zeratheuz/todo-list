@@ -125,6 +125,13 @@ select {
   transform: scale(2);
 }
 
+#editForm .date-priority {
+  all: unset;
+  gap: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
 #title {
   all: unset;
   font-size: 20px;

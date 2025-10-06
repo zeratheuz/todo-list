@@ -8,7 +8,7 @@ export function addTask(divContent, form) {
   const task = new Task(taskObject)
 
   if (!localStorage.getItem("tasks")) {
-    localStorage.setItem("tasks", "[]")
+    localStorage.setItem("tasks", "{}")
   }
 
   const tasks = JSON.parse(localStorage.getItem("tasks"))

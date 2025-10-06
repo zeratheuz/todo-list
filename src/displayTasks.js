@@ -18,7 +18,7 @@ export function displayTasks(divContent, filter = "allTasks") {
         liTask.id = task.id
         liTask.addEventListener("dblclick", () => {
           liTask.innerHTML = ""
-          createTaskForm(liTask, "edit")
+          createTaskForm(liTask, "edit", task.id)
         })
 
         const PRIORITY = {

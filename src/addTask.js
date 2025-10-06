@@ -12,7 +12,7 @@ export function addTask(divContent, form) {
   }
 
   const tasks = JSON.parse(localStorage.getItem("tasks"))
-  tasks.push(task)
+  tasks[task.id] = task
 
   localStorage.setItem("tasks", JSON.stringify(tasks))
   divContent.removeChild(form)

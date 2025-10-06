@@ -2,7 +2,7 @@ import { addTask } from './addTask.js'
 import { createButtonAddTask } from './createButtonAddTask.js'
 import { displayTasks } from './displayTasks.js'
 
-export function createTaskForm(element, type = "add") {
+export function createTaskForm(element, type = "add", idTask) {
   const form = document.createElement("form")
   form.id = `${type}Form`
   form.method = "post"
@@ -82,6 +82,15 @@ export function createTaskForm(element, type = "add") {
     form.appendChild(divButtons)
   } else {
     divDatePriority.appendChild(divButtons)
+  }
+
+  if (type === "edit") {
+    const tasks = JSON.parse(localStorage.getItem("tasks"))
+    console.log(tasks)
+    inputTitle.value = "TEST"
+    inputDesc.value = "TEST"
+    inputDate.value = "2025-10-05"
+    selectPriority.value = "3"
   }
 
   element.appendChild(form)

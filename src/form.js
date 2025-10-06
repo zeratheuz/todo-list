@@ -64,7 +64,11 @@ export function createTaskForm(element, type = "add") {
     if (type === "add") {
       createButtonAddTask(element)
     } else {
-      displayTasks()
+      const divContent = document.querySelector("#content")
+      displayTasks(divContent)
+      const buttonAddTask = document.querySelector(".add-task")
+      divContent.removeChild(buttonAddTask)
+      createButtonAddTask(divContent)
     }
   })
   divButtons.appendChild(buttonCancel)

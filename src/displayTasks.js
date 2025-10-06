@@ -10,7 +10,7 @@ export function displayTasks(divContent, filter = "allTasks") {
 
     const tasks = JSON.parse(localStorage.getItem("tasks"))
 
-    tasks.forEach(task => {
+    Object.entries(tasks).forEach(([id, task]) => {
 
       if (filter == task.priority || filter == "allTasks") {
 

@@ -5,9 +5,13 @@ export function removeTask(divContent, id) {
 
   const priority = document.querySelector("#ulTask").className
   const tasks = JSON.parse(localStorage.getItem("tasks"))
-  const index = tasks.findIndex(task => task.id == id)
-  tasks.splice(index, 1)
 
+  for (const task in tasks) {
+    if (tasks[task].id == id) {
+      delete tasks[task]
+    }
+  }
+ 
   localStorage.setItem("tasks", JSON.stringify(tasks))
 
   displayTasks(divContent, priority)

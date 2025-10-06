@@ -1,12 +1,12 @@
 const defaultTasks = {
-  task_0: { title: "Fix Car", desc: "Take the car to the mechanic for diagnostics and repairs.", date: "2025-10-01", priority: 3 },
-  task_1: { title: "Evening Walk", desc: "Go for a walk to get some fresh air.", date: "2025-10-02", priority: 2 },
-  task_2: { title: "Meet with Manager", desc: "Discuss project updates and next steps.", date: "2025-10-03", priority: 1 },
-  task_3: { title: "Rest Day", desc: "Take the day off to relax and recharge.", date: "2025-10-04", priority: 0 },
-  task_4: { title: "Review Reports", desc: "Go through the latest financial or project reports.", date: "2025-10-05", priority: 3 },
-  task_5: { title: "Workout Session", desc: "Attend a gym session or do a home workout.", date: "2025-10-07", priority: 2 },
-  task_6: { title: "Grocery Shopping", desc: "Pick up weekly groceries from the local store.", date: "2025-10-06", priority: 1 },
-  task_7: { title: "Computer Update", desc: "Install system updates and back up important files.", date: "2025-10-08", priority: 0 }
+  task_0: { id: "task_0", title: "Fix Car", desc: "Take the car for repairs.", date: "2025-10-01", priority: 3 },
+  task_1: { id: "task_1", title: "Evening Walk", desc: "Go out for fresh air.", date: "2025-10-02", priority: 2 },
+  task_2: { id: "task_2", title: "Meet with Manager", desc: "Discuss project updates.", date: "2025-10-03", priority: 1 },
+  task_3: { id: "task_3", title: "Rest Day", desc: "Take a full day off.", date: "2025-10-04", priority: 0 },
+  task_4: { id: "task_4", title: "Review Reports", desc: "Check recent reports.", date: "2025-10-05", priority: 3 },
+  task_5: { id: "task_5", title: "Workout Session", desc: "Do a workout session.", date: "2025-10-07", priority: 2 },
+  task_6: { id: "task_6", title: "Grocery Shopping", desc: "Buy weekly groceries.", date: "2025-10-06", priority: 1 },
+  task_7: { id: "task_7", title: "Computer Update", desc: "Install system updates.", date: "2025-10-08", priority: 0 }
 };
 
 export function createDefaultTasks() {
@@ -17,8 +17,8 @@ export function createDefaultTasks() {
   const tasks = JSON.parse(localStorage.getItem("tasks"))
 
   if (!Object.keys(tasks).length) {
-    Object.entries(defaultTasks).forEach(([task]) => {
-      tasks[task.id] = task
+    Object.entries(defaultTasks).forEach(([id, task]) => {
+      tasks[id] = task
     });
 
     localStorage.setItem("tasks", JSON.stringify(tasks))

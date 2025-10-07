@@ -120,6 +120,19 @@ select {
   scrollbar-width: none;
 }
 
+#content form {
+  cursor: default;
+}
+
+#content select:hover,
+#content input[type="date"]:hover {
+  cursor: pointer;
+}
+
+#content input[type="text"]:hover {
+  cursor: text;
+}
+
 #content li input[type="checkbox"] {
   margin-top: 10px;
   transform: scale(2);

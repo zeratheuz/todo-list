@@ -1,6 +1,7 @@
 import { addTask } from './addTask.js'
-import { createButtonAddTask } from './createButtonAddTask.js'
+import { editTask } from './editTask.js'
 import { displayTasks } from './displayTasks.js'
+import { createButtonAddTask } from './createButtonAddTask.js'
 
 export function createTaskForm(element, type = "add", idTask) {
   const form = document.createElement("form")
@@ -86,22 +87,24 @@ export function createTaskForm(element, type = "add", idTask) {
 
   if (type === "edit") {
     const tasks = JSON.parse(localStorage.getItem("tasks"))
-    console.log(tasks)
-    inputTitle.value = "TEST"
-    inputDesc.value = "TEST"
-    inputDate.value = "2025-10-05"
-    selectPriority.value = "3"
+    const task = tasks[idTask]
+    inputTitle.value = task.title
+    inputDesc.value = task.desc
+    inputDate.value = task.date
+    selectPriority.value = task.priority
+    buttonAddTask.textContent = "Edit Task"
   }
 
   element.appendChild(form)
 
   form.addEventListener("submit", (event) => {
     event.preventDefault()
+
     if (type === "add") {
       addTask(element, form)
     } else {
       alert(28)
-      // editTask(element, form)
+      editTask(element, form, idTask)
     }
   })
 }

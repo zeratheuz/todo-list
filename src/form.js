@@ -66,7 +66,8 @@ export function createTaskForm(element, type = "add", idTask) {
       createButtonAddTask(element)
     } else {
       const divContent = document.querySelector("#content")
-      displayTasks(divContent)
+      const priority = document.querySelector("#ulTask").className
+      displayTasks(divContent, priority)
       const buttonAddTask = document.querySelector(".add-task")
       divContent.removeChild(buttonAddTask)
       createButtonAddTask(divContent)

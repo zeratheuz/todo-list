@@ -16,7 +16,8 @@ export function editTask(element, form, idTask) {
   element.removeChild(form)
 
   const divContent = document.querySelector("#content")
-  displayTasks(divContent)
+  const priority = document.querySelector("#ulTask").className
+  displayTasks(divContent, priority)
 
   const buttonAddTask = document.querySelector(".add-task")
   divContent.removeChild(buttonAddTask)

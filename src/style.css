@@ -124,6 +124,11 @@ select {
   cursor: default;
 }
 
+#content li form {
+  gap: 10px;
+  padding: 0;
+}
+
 #content select:hover,
 #content input[type="date"]:hover {
   cursor: pointer;
@@ -203,4 +208,12 @@ select {
 
 .add-task:hover {
   background: royalblue;
+}
+
+@media (max-width: 1100px) {
+
+  #menu {
+    /* display: none; */
+  }
+
 }

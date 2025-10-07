@@ -90,6 +90,8 @@ export function createTaskForm(element, type = "add", idTask) {
     const tasks = JSON.parse(localStorage.getItem("tasks"))
     const task = tasks[idTask]
 
+    if (!task) {return}
+
     inputTitle.value = task.title
     inputDesc.value = task.desc
     inputDate.value = task.date

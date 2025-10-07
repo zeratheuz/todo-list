@@ -212,8 +212,44 @@ select {
 
 @media (max-width: 1100px) {
 
+  body {
+    flex-direction: column;
+  }
+
   #menu {
-    /* display: none; */
+    gap: 6rem;
+    display: flex;
+    padding: 0 0rem;
+    margin-top: 0;
+    flex: 0 0 4rem;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #menu .header-tasks {
+    gap: 0.2rem;
+    display: flex;
+    padding-top: 1rem;
+    width: 0px;
+    position: static;
+    background: royalblue;
+  }
+
+  #menu ul {
+    flex-direction: row;
+  }
+
+  #menu button {
+    width: 2rem;
+    text-align: start;
+    padding: 0.5rem 0.5rem;
+
+  }
+
+  #content {
+    gap: 1rem;
+    padding: 1rem 2rem 2rem;
+    scrollbar-width: none;
   }
 
 }

@@ -7,11 +7,14 @@ export function editTask(element, form, idTask) {
   const taskObject = Object.fromEntries(taskData.entries())
   const editedTask = new Task(taskObject)
 
+  console.log(taskObject)
+
   const tasks = JSON.parse(localStorage.getItem("tasks"))
 
   for (const task in tasks) {
     if (tasks[task].id == idTask) {
       tasks[task] = editedTask
+      break
     }
   }
 

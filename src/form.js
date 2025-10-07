@@ -76,7 +76,7 @@ export function createTaskForm(element, type = "add", idTask) {
 
   const buttonAddTask = document.createElement("button")
   buttonAddTask.classList.add("add-task")
-  buttonAddTask.textContent = "Add Task"
+  buttonAddTask.textContent = "Add"
   buttonAddTask.type = "submit"
   divButtons.appendChild(buttonAddTask)
   if (type === "add") {
@@ -88,11 +88,20 @@ export function createTaskForm(element, type = "add", idTask) {
   if (type === "edit") {
     const tasks = JSON.parse(localStorage.getItem("tasks"))
     const task = tasks[idTask]
+
+    console.log(idTask)
+    console.log(tasks)
+    console.log(task)
+
+    if (!task) {
+      return
+    }
+
     inputTitle.value = task.title
     inputDesc.value = task.desc
     inputDate.value = task.date
     selectPriority.value = task.priority
-    buttonAddTask.textContent = "Edit Task"
+    buttonAddTask.textContent = "Edit"
   }
 
   element.appendChild(form)
@@ -103,7 +112,6 @@ export function createTaskForm(element, type = "add", idTask) {
     if (type === "add") {
       addTask(element, form)
     } else {
-      alert(28)
       editTask(element, form, idTask)
     }
   })

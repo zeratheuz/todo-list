@@ -6,20 +6,20 @@ export function editTask(element, form, idTask) {
   const taskData = new FormData(form)
   const taskObject = Object.fromEntries(taskData.entries())
   const editedTask = new Task(taskObject)
-
-  console.log(taskObject)
+  editedTask.id = idTask
 
   const tasks = JSON.parse(localStorage.getItem("tasks"))
 
-  for (const task in tasks) {
-    if (tasks[task].id == idTask) {
-      tasks[task] = editedTask
-      break
-    }
-  }
+  tasks[idTask] = editedTask
 
   localStorage.setItem("tasks", JSON.stringify(tasks))
   element.removeChild(form)
-  displayTasks(element)
-  createButtonAddTask(element)
+
+  const divContent = document.querySelector("#content")
+  displayTasks(divContent)
+
+  const buttonAddTask = document.querySelector(".add-task")
+  divContent.removeChild(buttonAddTask)
+
+  createButtonAddTask(divContent)
 }

@@ -99,7 +99,7 @@ select {
   display: flex;
   overflow: auto;
   flex-direction: column;
-  padding: 3rem 8rem 2rem;
+  padding: 2rem 8rem;
 }
 
 #content ul {
@@ -145,12 +145,19 @@ select {
 }
 
 #date {
+  height: 2rem;
   width: 7rem;
 }
 
 #addForm {
   padding: 1rem;
   border: 1px solid royalblue;
+}
+
+#addForm .date-priority {
+  all: unset;
+  gap: .5rem;
+  display: flex;
 }
 
 #editForm .date-priority {
@@ -164,6 +171,7 @@ select {
   all: unset;
   gap: .5rem;
   display: flex;
+  padding: 0 3px;
 }
 
 #title {
@@ -198,9 +206,15 @@ select {
 }
 
 .task-details {
-  gap: 5px;
+  gap: .5rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.task-details h4 {
+  font-size: 18px;
+  align-self: end;
 }
 
 .cancel:hover {
@@ -263,7 +277,7 @@ select {
     width: 4.2rem;
   }
 
-  #editForm #priority {
+  #priority {
     width: 2.6rem;
   }
 

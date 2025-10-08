@@ -21,7 +21,6 @@ export function displayTasks(divContent, filter = "allTasks") {
         liTask.addEventListener("click", () => {
           if (liTask.classList.contains("clicked")) { return }
           const form = document.querySelector("#addForm")
-          console.log(form)
           if (form) {
             divContent.removeChild(form)
             plusAddTask(divContent)
@@ -48,7 +47,15 @@ export function displayTasks(divContent, filter = "allTasks") {
         taskCheck.addEventListener("mouseenter", () => { taskCheck.checked = true })
         taskCheck.addEventListener("mouseleave", () => { taskCheck.checked = false })
 
-        taskCheck.addEventListener("click", () => { removeTask(divContent, task.id) })
+        taskCheck.addEventListener("click", () => {
+          const form = document.querySelector("#addForm")
+
+          if (form) {
+            divContent.removeChild(form)
+            plusAddTask(divContent)
+          }
+          removeTask(divContent, task.id)
+        })
 
         liTask.appendChild(taskCheck)
 

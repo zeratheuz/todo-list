@@ -15,7 +15,7 @@ export function removeTask(divContent, id) {
   localStorage.setItem("tasks", JSON.stringify(tasks))
 
   displayTasks(divContent, priority)
-  const buttonAddTask = document.querySelector(".add-task")
+  const buttonAddTask = document.querySelector(".plus-add-task")
   divContent.removeChild(buttonAddTask)
   createButtonAddTask(divContent)
 }

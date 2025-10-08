@@ -207,12 +207,14 @@ select {
   background: darkgray;
 }
 
-.add-task {
+.add-task,
+.plus-add-task {
   color: white;
   background: cornflowerblue;
 }
 
-.add-task:hover {
+.add-task:hover,
+.plus-add-task:hover {
   background: royalblue;
 }
 

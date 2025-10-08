@@ -17,8 +17,12 @@ filters.forEach(filter => {
     ulTask.className = ""
     ulTask.classList.add(filter.id)
 
-    const buttonAddTask = document.querySelector(".add-task")
-    divContent.removeChild(buttonAddTask)
+    const buttonAddTask = document.querySelector(".plus-add-task")
+    console.log(buttonAddTask)
+    if (buttonAddTask.textContent == "+ Add Task") {
+      console.log(buttonAddTask)
+      divContent.removeChild(buttonAddTask)
+    }
 
     createButtonAddTask(divContent)
   })

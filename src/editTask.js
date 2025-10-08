@@ -19,7 +19,7 @@ export function editTask(element, form, idTask) {
   const priority = document.querySelector("#ulTask").className
   displayTasks(divContent, priority)
 
-  const buttonAddTask = document.querySelector(".add-task")
+  const buttonAddTask = document.querySelector(".plus-add-task")
   divContent.removeChild(buttonAddTask)
 
   createButtonAddTask(divContent)

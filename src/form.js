@@ -35,7 +35,7 @@ export function createTaskForm(element, type = "add", idTask) {
   selectPriority.id = "priority"
   selectPriority.name = "priority"
 
-  const priorities = ["🔵Priority", "🟢Priority 1", "🟠Priority 2", "🔴Priority 3"]
+  const priorities = ["🔵Priority 0", "🟢Priority 1", "🟠Priority 2", "🔴Priority 3"]
 
   priorities.forEach((priority, index) => {
     const optPriority = document.createElement("option")
@@ -44,12 +44,12 @@ export function createTaskForm(element, type = "add", idTask) {
     optPriority.value = index
 
     if (index === 0) {
-      optPriority.hidden = true
-      optPriority.disabled = true
       optPriority.selected = true
     }
+
     selectPriority.appendChild(optPriority)
   })
+  
   divDatePriority.appendChild(selectPriority)
   form.appendChild(divDatePriority)
 

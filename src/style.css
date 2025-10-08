@@ -41,6 +41,8 @@ form .buttons {
 input,
 select {
   font-size: 1rem;
+  border: solid 1px;
+  border-radius: 5px;
 }
 
 #menu {
@@ -152,7 +154,12 @@ select {
   all: unset;
   gap: 1rem;
   display: flex;
-  justify-content: flex-end;
+}
+
+#editForm .buttons {
+  all: unset;
+  gap: 1rem;
+  display: flex;
 }
 
 #title {
@@ -192,11 +199,6 @@ select {
   flex-direction: column;
 }
 
-.date-priority {
-  gap: 1rem;
-  display: flex;
-}
-
 .cancel:hover {
   background: darkgray;
 }
@@ -223,7 +225,6 @@ select {
     margin-top: 0;
     flex: 0 0 4rem;
     flex-direction: row;
-    justify-content: center;
   }
 
   #menu .header-tasks {
@@ -252,4 +253,23 @@ select {
     scrollbar-width: none;
   }
 
+  #date {
+    width: 4.3rem;
+  }
+
+  #editForm #priority {
+    width: 2.6rem;
+    justify-self: end;
+  }
+
+  #editForm .date-priority {
+    gap: 0.4rem;
+    padding: 0 3px;
+    justify-content: start;
+  }
+
+    #editForm .buttons {
+    gap: 0.4rem;
+    justify-content: start;
+  }
 }

@@ -1,4 +1,4 @@
-import { createButtonAddTask } from "./createButtonAddTask"
+import { plusAddTask } from "./plusAddTask"
 import { displayTasks } from "./displayTasks"
 
 export function removeTask(divContent, id) {
@@ -11,11 +11,11 @@ export function removeTask(divContent, id) {
       delete tasks[task]
     }
   }
- 
+
   localStorage.setItem("tasks", JSON.stringify(tasks))
 
   displayTasks(divContent, priority)
-  const buttonAddTask = document.querySelector(".plus-add-task")
-  divContent.removeChild(buttonAddTask)
-  createButtonAddTask(divContent)
+  const btnPlusAddTask = document.querySelector(".plus-add-task")
+  divContent.removeChild(btnPlusAddTask)
+  plusAddTask(divContent)
 }

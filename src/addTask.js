@@ -1,6 +1,6 @@
-import { createButtonAddTask } from './createButtonAddTask.js'
-import { displayTasks } from './displayTasks.js'
 import { Task } from './Task.js'
+import { plusAddTask } from './plusAddTask.js'
+import { displayTasks } from './displayTasks.js'
 
 export function addTask(element, form) {
   const taskData = new FormData(form)
@@ -17,5 +17,5 @@ export function addTask(element, form) {
   localStorage.setItem("tasks", JSON.stringify(tasks))
   element.removeChild(form)
   displayTasks(element)
-  createButtonAddTask(element)
+  plusAddTask(element)
 }

@@ -1,7 +1,7 @@
 import './style.css'
 import { displayTasks } from './displayTasks.js'
 import { createDefaultTasks } from './defaultTasks.js'
-import { createButtonAddTask } from './createButtonAddTask.js'
+import { plusAddTask } from './plusAddTask.js'
 
 createDefaultTasks()
 
@@ -17,17 +17,21 @@ filters.forEach(filter => {
     ulTask.className = ""
     ulTask.classList.add(filter.id)
 
-    const buttonAddTask = document.querySelector(".plus-add-task")
-    console.log(buttonAddTask)
-    if (buttonAddTask.textContent == "+ Add Task") {
-      console.log(buttonAddTask)
-      divContent.removeChild(buttonAddTask)
+    const btnPlusAddTask = document.querySelector(".plus-add-task")
+    console.log(btnPlusAddTask)
+    if (btnPlusAddTask) {
+      divContent.removeChild(btnPlusAddTask)
     }
 
-    createButtonAddTask(divContent)
+    const form = document.querySelector("form")
+    if (form) {
+      divContent.removeChild(form)
+    }
+
+    plusAddTask(divContent)
   })
 })
 
 displayTasks(divContent)
 
-createButtonAddTask(divContent)
+plusAddTask(divContent)

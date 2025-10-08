@@ -1,6 +1,6 @@
-import { createButtonAddTask } from './createButtonAddTask.js'
-import { displayTasks } from './displayTasks.js'
 import { Task } from './Task.js'
+import { plusAddTask } from './plusAddTask.js'
+import { displayTasks } from './displayTasks.js'
 
 export function editTask(element, form, idTask) {
   const taskData = new FormData(form)
@@ -19,8 +19,8 @@ export function editTask(element, form, idTask) {
   const priority = document.querySelector("#ulTask").className
   displayTasks(divContent, priority)
 
-  const buttonAddTask = document.querySelector(".plus-add-task")
-  divContent.removeChild(buttonAddTask)
+  const btnPlusAddTask = document.querySelector(".plus-add-task")
+  divContent.removeChild(btnPlusAddTask)
 
-  createButtonAddTask(divContent)
+  plusAddTask(divContent)
 }

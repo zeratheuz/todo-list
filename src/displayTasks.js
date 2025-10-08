@@ -1,4 +1,5 @@
 import { createTaskForm } from "./form"
+import { plusAddTask } from "./plusAddTask"
 import { removeTask } from "./removeTask"
 
 export function displayTasks(divContent, filter = "allTasks") {
@@ -18,7 +19,13 @@ export function displayTasks(divContent, filter = "allTasks") {
         liTask.id = task.id
 
         liTask.addEventListener("click", () => {
-          if (liTask.classList.contains("clicked")) {return}
+          if (liTask.classList.contains("clicked")) { return }
+          const form = document.querySelector("#addForm")
+          console.log(form)
+          if (form) {
+            divContent.removeChild(form)
+            plusAddTask(divContent)
+          }
           liTask.classList.add("clicked")
           liTask.innerHTML = ""
           createTaskForm(liTask, "edit", task.id)

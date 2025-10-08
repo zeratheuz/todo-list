@@ -1,7 +1,7 @@
 import { addTask } from './addTask.js'
 import { editTask } from './editTask.js'
+import { plusAddTask } from './plusAddTask.js'
 import { displayTasks } from './displayTasks.js'
-import { createButtonAddTask } from './createButtonAddTask.js'
 
 export function createTaskForm(element, type = "add", idTask) {
   const form = document.createElement("form")
@@ -49,7 +49,7 @@ export function createTaskForm(element, type = "add", idTask) {
 
     selectPriority.appendChild(optPriority)
   })
-  
+
   divDatePriority.appendChild(selectPriority)
   form.appendChild(divDatePriority)
 
@@ -60,26 +60,29 @@ export function createTaskForm(element, type = "add", idTask) {
   buttonCancel.classList.add("cancel")
   buttonCancel.textContent = "Cancel"
   buttonCancel.type = "button"
+
   buttonCancel.addEventListener("click", () => {
     element.removeChild(form)
+
     if (type === "add") {
-      createButtonAddTask(element)
+      plusAddTask(element)
     } else {
       const divContent = document.querySelector("#content")
       const priority = document.querySelector("#ulTask").className
       displayTasks(divContent, priority)
-      const buttonAddTask = document.querySelector(".plus-add-task")
-      divContent.removeChild(buttonAddTask)
-      createButtonAddTask(divContent)
+      const btnPlusAddTask = document.querySelector(".plus-add-task")
+      divContent.removeChild(btnPlusAddTask)
+      plusAddTask(divContent)
     }
   })
   divButtons.appendChild(buttonCancel)
 
-  const buttonAddTask = document.createElement("button")
-  buttonAddTask.classList.add("add-task")
-  buttonAddTask.textContent = "Add"
-  buttonAddTask.type = "submit"
-  divButtons.appendChild(buttonAddTask)
+  const btnAddEdit = document.createElement("button")
+  btnAddEdit.classList.add("add-task")
+  btnAddEdit.textContent = "Add"
+  btnAddEdit.type = "submit"
+  divButtons.appendChild(btnAddEdit)
+
   if (type === "add") {
     form.appendChild(divButtons)
   } else {
@@ -90,13 +93,13 @@ export function createTaskForm(element, type = "add", idTask) {
     const tasks = JSON.parse(localStorage.getItem("tasks"))
     const task = tasks[idTask]
 
-    if (!task) {return}
+    if (!task) { return }
 
     inputTitle.value = task.title
     inputDesc.value = task.desc
     inputDate.value = task.date
     selectPriority.value = task.priority
-    buttonAddTask.textContent = "Edit"
+    btnAddEdit.textContent = "Edit"
   }
 
   element.appendChild(form)

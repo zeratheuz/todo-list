@@ -18,7 +18,6 @@ filters.forEach(filter => {
     ulTask.classList.add(filter.id)
 
     const btnPlusAddTask = document.querySelector(".plus-add-task")
-    console.log(btnPlusAddTask)
     if (btnPlusAddTask) {
       divContent.removeChild(btnPlusAddTask)
     }

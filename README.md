@@ -1,4 +1,4 @@
-# [<img src="src/ramen.png" width="30"/> Todo List](https://zeratheuz.github.io/todo-list/)
+# [<img src="src/assets/todo.png" width="30"/> Todo List](https://zeratheuz.github.io/todo-list/)
 ---
 
 ## 🚀 Technologies
